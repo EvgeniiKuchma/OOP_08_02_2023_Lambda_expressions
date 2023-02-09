@@ -29,51 +29,6 @@ private:
 	int _x;
 };
 
-
-class Car : public IVehicle
-{
-public:
-	Car(int speed) : _speed(speed){}
-	int getSpeed() const override {
-		return _speed;
-	}
-	void printType() const override {
-		std::cout << "Car " << std::endl;
-	}
-	
-private:
-	int _speed;
-};
-class Moto : public IVehicle
-{
-public:
-	Moto(int speed) : _speed(speed) {}
-	int getSpeed() const override {
-		return _speed;
-	}
-	void printType() const override {
-		std::cout << "Car " << std::endl;
-	}
-
-private:
-	int _speed;
-};
-class Van : public IVehicle
-{
-public:
-	Van(int speed) : _speed(speed) {}
-	int getSpeed() const override {
-		return _speed;
-	}
-	void printType() const override {
-		std::cout << "Car " << std::endl;
-	}
-
-private:
-	int _speed;
-};
-
-
 int main() {
 	setlocale(LC_ALL, "Rus");
 	Incrementer inc(1);
@@ -115,11 +70,6 @@ int main() {
 	//Engine::Printer p; при подключение using namespace Engine данную конструкцию можно не использовать можно не использовать
 	
 	Printer p;
-	std::shared_ptr<IVehicle> c = std::make_shared<Car>(50);
-	std::shared_ptr<IVehicle> v = std::make_shared<Van>(50);
-	std::shared_ptr<IVehicle> m = std::make_shared<Moto>(50);
-	p.getVehicle(c);
-	p.getVehicle(v);
-	p.getVehicle(m);
+	
 	return 0;
 }
